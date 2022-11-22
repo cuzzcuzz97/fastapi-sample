@@ -1,10 +1,5 @@
 from fastapi import FastAPI
-import psycopg2
-import time
 from fastapi.middleware.cors import CORSMiddleware
-
-from .database import engine
-from . import models
 from .routers import post, user, auth, vote
 
 
@@ -34,5 +29,5 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"welcome"}
+    return {"message": "Hello World!!!"}
 
